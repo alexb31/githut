@@ -13,15 +13,7 @@ class GitHutController extends Controller
      */
     public function githutAction(Request $request)
     {
-        return $this->render('githut/index.html.twig');
-    }
-
-    /**
-     * @Route("/profile", name="profile")
-     */
-    public function profileAction(Request $request)
-    {
-        return $this->render('githut/profile.html.twig', [
+        return $this->render('githut/index.html.twig', [
             'avatar_url' => 'https://avatars1.githubusercontent.com/u/17199383?v=3',
             'name' => "Alexandre Bornstein",
             'blog' => "www.alexandrebornstein.fr",
@@ -29,8 +21,31 @@ class GitHutController extends Controller
                 'Followers' => 2,
                 'Following' => 4,
                 'Public Repos' => 12,
+            ],
+            'repo_count' => 100,
+            'most_stars' => 67,
+            'repos' => [
+                [
+                    'name' => 'some repository',
+                    'url' => 'url',
+                    'stargazers_count' => 46,
+                    'description' => 'description'
+                ],
+                [
+                    'name' => 'some repository',
+                    'url' => 'url',
+                    'stargazers_count' => 46,
+                    'description' => 'description'
+                ],
+                [
+                    'name' => 'some repository',
+                    'url' => 'url',
+                    'stargazers_count' => 46,
+                    'description' => 'description'
+                ],
             ]
         ]);
+
     }
 
 }
